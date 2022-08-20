@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/akefeder/Documents/MiniShell'
+make: Nothing to be done for 'all'.
+make: Leaving directory '/mnt/nfs/homes/akefeder/Documents/MiniShell'
+ 

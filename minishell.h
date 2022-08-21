@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/20 23:11:17 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/21 04:49:16 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef	struct s_env	t_env;
 
 struct s_data
 {
-	char	**str;
+	char	*str;
 	t_token	token;
 	t_data	*suiv;
 };

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:47:32 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/20 22:37:36 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/21 04:57:41 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,18 @@ int	ft_strlen_char(char *str, char c)
 	return (i);
 }
 
+int	ft_strlen_char(char *str, char c, int i)
+{
+	int	j;
+
+	j = 0;
+	while (str[i] != NULL && str[i] != c)
+	{
+		i++;
+		j++;
+	}	
+	return (i);
+}
 
 int	ft_strllen(char **str)
 {

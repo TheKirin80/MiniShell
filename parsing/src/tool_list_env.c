@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:37:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/20 23:27:03 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/21 11:11:48 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		add_l_env(char **env, t_env *my_env)
+int		add_l_env(char **env, t_env *my_env, int i)
 {
 	t_env	*slot;
 	t_env	*flow;
@@ -18,7 +18,7 @@ int		add_l_env(char **env, t_env *my_env)
 	slot = malloc (1 * sizeof(t_env));
 	if (slot == NULL)
 		return (ERROR);
-	slot->str = ft_strcopy(my_env);
+	slot->str = ft_strcopy(env[i]);
 	if (slot->str == NULL)
 		return (ERROR);
 	if (ft_split_env(slot, '=') == ERROR)

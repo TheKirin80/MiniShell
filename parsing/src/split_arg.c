@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/21 04:56:02 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:40:12 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,25 @@ char	*ft_strcopy_char_a(char *str, char c, int	*i)
 	return (cpy);
 }
 
-int		ft_split_arg(t_data *data, char c)
+int		ft_split_arg(t_data *data, char c, char *src)
 {
 	int	i;
+	t_data	*slot;
 
 	i = 0;
+	while (src[i] != '\0')
 	{
-		env->shrt = ft_strcopy_char(env->str, c, &i);
-		i++;
-		env->path = ft_strcopy_int(env->str, i);
-		if (env->shrt == NULL || env->path == NULL)
+		if (add_l_arg(slot) == ERROR)
 			return (ERROR);
-		return (OK);
+		if (!data)
+			data = slot;
+		while(slot->suiv != NULL)
+			slot = slot->suiv;
+		slot->str = ft_strcopy_char_a(src, c, &i);
+		if (slot->str == NULL)
+			return (ERROR);
+		while(src[i] == " ")
+			i++;
 	}
 	else
 		return (ERROR);

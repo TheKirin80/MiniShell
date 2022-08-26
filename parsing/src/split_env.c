@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/21 11:11:27 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:47:17 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
 char	*ft_strcopy(char *str)
 {
@@ -53,7 +53,7 @@ char	*ft_strcopy_int(char *str, int i)
 	return (cpy);
 }
 
-char	*ft_strcopy_char_e(char *str, char c, int	*i)
+char	*ft_strcopy_char_e(char *str, char c, int *i)
 {
 	int		len;
 	char	*cpy;
@@ -78,7 +78,7 @@ int		ft_split_env(t_env *env, char c)
 	i = 0;
 	if (env != NULL)
 	{
-		env->shrt = ft_strcopy_char(env->str, c, &i);
+		env->shrt = ft_strcopy_char_e(env->str, c, &i);
 		i++;
 		env->path = ft_strcopy_int(env->str, i);
 		if (env->shrt == NULL || env->path == NULL)

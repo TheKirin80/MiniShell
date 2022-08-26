@@ -6,18 +6,18 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:47:32 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/21 04:57:41 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:49:17 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "../minishell.h"
 
 int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != NULL)
+	while (str && str[i] != '\0')
 		i++;
 	return (i);
 }
@@ -27,7 +27,7 @@ int	ft_strlen_int(char *str, int i)
 	int	j;
 
 	j = 0;
-	while (str[i] != NULL)
+	while (str && str[i] != '\0')
 	{
 		j++;
 		i++;
@@ -40,17 +40,17 @@ int	ft_strlen_char(char *str, char c)
 	int	i;
 
 	i = 0;
-	while (str[i] != NULL && str[i] != c)
+	while (str && str[i] != '\0' && str[i] != c)
 		i++;
 	return (i);
 }
 
-int	ft_strlen_char(char *str, char c, int i)
+int	ft_strlen_char_i(char *str, char c, int i)
 {
 	int	j;
 
 	j = 0;
-	while (str[i] != NULL && str[i] != c)
+	while (str && str[i] != '\0' && str[i] != c)
 	{
 		i++;
 		j++;

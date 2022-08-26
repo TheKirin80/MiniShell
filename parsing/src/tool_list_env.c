@@ -6,11 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:37:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/21 11:11:48 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/08/25 16:50:21 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		add_l_env(char **env, t_env *my_env, int i)
+#include "../minishell.h"
+
+int		add_l_env(char *env, t_env *my_env)
 {
 	t_env	*slot;
 	t_env	*flow;
@@ -18,7 +20,7 @@ int		add_l_env(char **env, t_env *my_env, int i)
 	slot = malloc (1 * sizeof(t_env));
 	if (slot == NULL)
 		return (ERROR);
-	slot->str = ft_strcopy(env[i]);
+	slot->str = ft_strcopy(env);
 	if (slot->str == NULL)
 		return (ERROR);
 	if (ft_split_env(slot, '=') == ERROR)
@@ -36,7 +38,7 @@ int		add_l_env(char **env, t_env *my_env, int i)
 	return (OK);
 }
 
-void	del_l_env()
+//void	del_l_env()
 
 
 t_env	*init_l_env(char **env)
@@ -45,6 +47,7 @@ t_env	*init_l_env(char **env)
 	int		i;
 
 	my_env = NULL;
+	i = 0;
 	while (env[i] != NULL)
 	{
 		if (add_l_env(env[i], my_env) == ERROR)

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/02 14:00:06 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/02 18:40:22 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@
 
 typedef struct s_data	t_data;
 typedef	struct s_env	t_env;
+
+typedef enum 
+{ 
+	CMD,
+	OPT,
+	ARG,
+	PIPE,
+	S_L_REDIR,
+	D_L_REDIR,
+	S_R_REDIR,
+	D_R_REDIR,
+	S_QUOTE,
+	D_QUOTE
+}	t_token;
 
 struct s_data
 {

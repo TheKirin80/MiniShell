@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/02 14:11:10 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:13:31 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strcopy_char_a(char *str, char c, int *i)
 	char	*cpy;
 	int		j;
 
+	while(str[(*i)] == ' ')
+			(*i)++;
 	j = *i;
 	len = ft_strlen_char_i(str, c, j);
 	j = 0;
@@ -53,8 +55,6 @@ t_data	*ft_split_arg(char c, char *src)
 		slot->str = ft_strcopy_char_a(src, c, &i);
 		if (slot->str == NULL)
 			return (NULL);
-		while(src[i] == ' ')
-			i++;
 		if (src[i] != '\0')
 			slot->suiv = add_l_arg();
 	}

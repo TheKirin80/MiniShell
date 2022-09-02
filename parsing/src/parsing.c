@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/02 14:11:33 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:14:19 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_data	*parsing(char *s)
 	i = 0;
 	while (printer != NULL)
 	{
-		printf("%i : %s|\n", i, printer->str);
+		printf("%i : |%s|\n", i, printer->str);
 		i++;
 		printer = printer->suiv;
 	}

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 00:14:14 2022
+# Make data base, printed on Fri Sep  2 08:33:08 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ _ = /usr/share/code/code
 # makefile (from 'Makefile', line 17)
 CFLAGS = -Wall -Wextra -Werror 
 # environment
-JOURNAL_STREAM = 9:381922
+JOURNAL_STREAM = 9:368186
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -65,13 +65,13 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/35726/bus
 # makefile (from 'Makefile', line 9)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 50833
+MANAGERPID = 76918
 # environment
 VSCODE_CWD = /mnt/nfs/homes/akefeder
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_35726_eRp3gb
+KRB5CCNAME = FILE:/tmp/krb5cc_35726_69DMYS
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -81,7 +81,7 @@ GPG_AGENT_INFO = /run/user/35726/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r3p9.clusters.42paris.fr:@/tmp/.ICE-unix/51369,unix/e1r3p9.clusters.42paris.fr:/tmp/.ICE-unix/51369
+SESSION_MANAGER = local/e1r8p1.clusters.42paris.fr:@/tmp/.ICE-unix/77438,unix/e1r8p1.clusters.42paris.fr:/tmp/.ICE-unix/77438
 # environment
 XDG_RUNTIME_DIR = /run/user/35726
 # environment
@@ -89,7 +89,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 1f162efdc7ef4592b5b9fe0005efdd6f
+INVOCATION_ID = 9c0616b5cec449079a2e9c410e375dcb
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -101,7 +101,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/35726/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 52568
+GIO_LAUNCHED_DESKTOP_FILE_PID = 85380
 # automatic
 %F = $(notdir $%)
 # environment
@@ -111,7 +111,7 @@ PWD = /mnt/nfs/homes/akefeder/Documents/MiniShell
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 51325
+SSH_AGENT_PID = 77402
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -125,7 +125,7 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/akefeder/.config/Code/CachedData/3b889b0
 # environment
 LOGNAME = akefeder
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /mnt/nfs/homes/akefeder/.oh-my-zsh
 # environment
@@ -227,7 +227,7 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/35726/docker.sock
 # environment
-VSCODE_PID = 52568
+VSCODE_PID = 85380
 # variable set hash-table stats:
 # Load=109/1024=11%, Rehash=0, Collisions=15/140=11%
 
@@ -237,7 +237,7 @@ VSCODE_PID = 52568
 
 # Directories
 
-# . (device 57, inode 264372399): 7 files, no impossibilities.
+# . (device 59, inode 264372399): 7 files, no impossibilities.
 
 # 7 files, no impossibilities in 1 directories.
 
@@ -279,6 +279,7 @@ bonus:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 22):
 			$(CC) $(CFLAGS) $(INC) -c $< -o $@
+ 
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -288,7 +289,6 @@ fclean: clean
 #  recipe to execute (from 'Makefile', line 33):
 			${RM} ${NAME}
 			@make clean --no-print-directory  -C parsing/
- 
 
 # Not a target:
 .DEFAULT:
@@ -334,6 +334,6 @@ parsing:
 # strcache performance: lookups = 39 / hit rate = 53%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Fri Aug 26 00:14:14 2022
+# Finished Make data base on Fri Sep  2 08:33:08 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/25 17:54:29 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/02 14:00:06 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int	ft_strlen_int(char *str, int i);
 int	ft_strlen_char(char *str, char c);
 int	ft_strlen_char_i(char *str, char c, int i);
 int	ft_strllen(char **str);
-int		add_l_arg(t_data *data);
+t_data	*add_l_arg(void);
 char	*ft_strcopy_char_a(char *str, char c, int *i);
-int		ft_split_arg(t_data *data, char c, char *src);
-int parsing(char *s, t_data *data);
+t_data	*ft_split_arg(char c, char *src);
+t_data	*parsing(char *s);
 
 #endif

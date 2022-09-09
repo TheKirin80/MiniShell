@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/02 16:14:19 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/09 12:45:31 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_data	*parsing(char *s)
 	t_data	*data;
 	int i;
 
+	//check_error_parse(s); Sert a check les erreurs basique 
 	data = ft_split_arg(' ', s);
 	if (data == NULL)
 	{

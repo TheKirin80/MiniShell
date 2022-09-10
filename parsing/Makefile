@@ -1,6 +1,6 @@
 SRC_DIR	= src
 
-SRC_FILES	= main.c parsing.c split_arg.c split_env.c strlen.c tool_list_data.c tool_list_env.c
+SRC_FILES	= main.c check_error.c gest_error.c parsing.c split_arg.c split_env.c strlen.c tool_list_data.c tool_list_env.c
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

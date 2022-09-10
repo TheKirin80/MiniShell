@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/09 12:45:31 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/10 20:03:20 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ t_data	*parsing(char *s)
 	t_data	*data;
 	int i;
 
-	//check_error_parse(s); Sert a check les erreurs basique 
-	data = ft_split_arg(' ', s);
+	if (check_error_parse(s) == ERROR)
+		return (gest_error(ERR_CHECK, NULL), NULL);
+	data = ft_quot_esp_split(s);
 	if (data == NULL)
-	{
-		printf("je suis la \n");
-		return (NULL);
-	}
+		return (gest_error(ERR_SPLIT, data), NULL);
 	printer = data;
 	i = 0;
 	while (printer != NULL)
@@ -33,5 +31,6 @@ t_data	*parsing(char *s)
 		i++;
 		printer = printer->suiv;
 	}
+	gest_error(END, data);
 	return (data);
 }

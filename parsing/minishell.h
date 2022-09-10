@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/02 18:40:22 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:57:44 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@
 # include <sys/ioctl.h>
 # include <termios.h>
 
-#define ERROR	-1
-#define OK		0
+#define ERROR		-1
+#define OK			0
+#define CONTINUE	1
+#define ERR_CHECK	1
+#define ERR_SPLIT	2
+#define END			3
 
 typedef struct s_data	t_data;
 typedef	struct s_env	t_env;
@@ -56,7 +60,7 @@ struct s_data
 	char	*str;
 	//t_token	token;
 	t_data	*suiv;
-	int i;
+	//int i;
 };
 
 struct	s_env
@@ -79,8 +83,10 @@ int	ft_strlen_char(char *str, char c);
 int	ft_strlen_char_i(char *str, char c, int i);
 int	ft_strllen(char **str);
 t_data	*add_l_arg(void);
-char	*ft_strcopy_char_a(char *str, char c, int *i);
-t_data	*ft_split_arg(char c, char *src);
+char	*ft_strcopy_esp_split(char *str, int *i, char *c);
+t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
+void	gest_error(int code_err, t_data *data);
+int		check_error_parse(char *s);
 
 #endif

@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   gest_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:10:55 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/10 16:32:15 by akefeder         ###   ########.fr       */
+/*   Created: 2022/09/10 11:44:08 by akefeder          #+#    #+#             */
+/*   Updated: 2022/09/10 16:11:28 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	main(int argc, char **argv)
+void	free_parse(t_data *data)
 {
-	char	*s;
-	t_data	*data;
-
-	//rempli_env(char **env);
+	t_data *tmp;
 	
-	if (argc > 1)
-		return (printf("L'executable n'a pas de parametre\n") , ERROR);
-	(void)argv;
-	int i = 0;
-	while (i < 2)
+	tmp = NULL;
+	while (data != NULL)
 	{
-		//Ici je me prepare a recevoir une ligne.
-		s = readline("minishell : ");
-		data = parsing(s);
-		//J' ajoute simplement l'historique des commandes.
-		//add_history(s);
-		if (data == NULL)
-			free(s);
-		i++;
+		tmp = data->suiv;
+		if (data->str != NULL)
+			free(data->str);
+		free(data);
+		data = tmp;
 	}
-	return (0);
+}
+
+void	gest_error(int code_err, t_data *data)
+{
+	if (code_err == ERR_CHECK)
+		printf("COMMAND DONT RESPECT THE FORMAT\n");
+	else if (code_err == ERR_SPLIT)
+	{
+		free_parse(data);
+		printf("COMMAND INVALID\n");
+	}
+	else if (code_err == END)
+		free_parse(data);
+	
 }

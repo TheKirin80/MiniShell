@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 06:44:59 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/09 11:40:33 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:58:57 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,45 @@ t_data*	add_l_arg(void)
 	slot->suiv = NULL;
 	slot->str = NULL;
 	return (slot);
+}
+
+int		ft_comp_esp_split(char src)
+{
+	if (src == '\'')
+		return (1);
+	else if (src == '\"')
+		return (2);
+	else
+	{
+		return (0);
+	}
+}
+
+char	*ft_strcopy_esp_split(char *str, int *i, char *c)
+{
+	int 	choice;
+	int		len;
+	char	*cpy;
+	int		j;
+
+	while(str[(*i)] == ' ')
+			(*i)++;
+	j = *i;
+	choice = ft_comp_esp_split(str[(*i)]);
+	len = ft_strlen_char_i(str, c[choice], j);
+	j = 0;
+	cpy = malloc ((len + 1) * sizeof(char));
+	if (str == NULL || cpy == NULL )
+		return (NULL);
+	if (c[choice] == '\'' || c[choice] == '\"')
+		(*i)++;
+	while(str[(*i)] != '\0' && str[(*i)] != c[choice])
+	{
+		cpy[j] = str[(*i)];
+		(*i)++;
+		j++;
+	}
+	cpy[(j)] = '\0';
+	//printf("Original : %s\n Indice de debut %i\n valeur de la copy : %s\n", str, *i, cpy);
+	return (cpy);
 }

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/10 19:57:44 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/11 12:12:21 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
 void	gest_error(int code_err, t_data *data);
 int		check_error_parse(char *s);
-
+int		ft_compare(char *src, char *cmp);
 #endif

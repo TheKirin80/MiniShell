@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 06:44:59 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/10 19:58:57 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/11 12:16:10 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strcopy_esp_split(char *str, int *i, char *c)
 			(*i)++;
 	j = *i;
 	choice = ft_comp_esp_split(str[(*i)]);
-	len = ft_strlen_char_i(str, c[choice], j);
+	len = ft_strlen_char_i(str, c[choice], (*i));
 	j = 0;
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )

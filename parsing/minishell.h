@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/11 12:12:21 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/11 12:50:42 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,17 @@ char	*ft_strcopy(char *str);
 char	*ft_strcopy_int(char *str, int i);
 char	*ft_strcopy_char_e(char *str, char c, int *i);
 int		ft_split_env(t_env *env, char c);
-int	ft_strlen(char *str);
-int	ft_strlen_int(char *str, int i);
-int	ft_strlen_char(char *str, char c);
-int	ft_strlen_char_i(char *str, char c, int i);
-int	ft_strllen(char **str);
+int		ft_strlen(char *str);
+int		ft_strlen_int(char *str, int i);
+int		ft_strlen_char(char *str, char c);
+int		ft_strlen_char_i(char *str, char c, int i);
+int		ft_strllen(char **str);
 t_data	*add_l_arg(void);
 char	*ft_strcopy_esp_split(char *str, int *i, char *c);
 t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
 void	gest_error(int code_err, t_data *data);
 int		check_error_parse(char *s);
-int		ft_compare(char *src, char *cmp);
+int		ft_compare(char src, char *cmp);
+int		check_space(char *s);
 #endif

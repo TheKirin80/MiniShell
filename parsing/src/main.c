@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:10:55 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/10 16:32:15 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/11 12:40:27 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		return (printf("L'executable n'a pas de parametre\n") , ERROR);
 	(void)argv;
 	int i = 0;
-	while (i < 2)
+	while (i < 5)
 	{
 		//Ici je me prepare a recevoir une ligne.
 		s = readline("minishell : ");

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 10:28:56 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:28:52 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 #define ERROR		-1
 #define OK			0
 #define N_FOLLOW	0
+#define N_FOUND		0
+#define FOUND		1
 #define	FOLLOW		1
 #define CONTINUE	1
 #define ERR_CHECK	1
@@ -45,6 +47,7 @@ typedef	struct s_env	t_env;
 
 typedef enum 
 { 
+	DEFAULT,
 	CMD,
 	OPT,
 	ARG,
@@ -91,5 +94,6 @@ t_data	*parsing(char *s);
 void	gest_error(int code_err, t_data *data);
 int		check_error_parse(char *s);
 int		ft_compare(char src, char *cmp);
+int		ft_compare_str(char *src, char *cmp);
 int		check_space(char *s);
 #endif

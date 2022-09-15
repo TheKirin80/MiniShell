@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tool_list_data.c                                   :+:      :+:    :+:   */
+/*   esp_quote_tool.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 06:44:59 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 10:50:29 by akefeder         ###   ########.fr       */
+/*   Created: 2022/09/15 11:44:11 by akefeder          #+#    #+#             */
+/*   Updated: 2022/09/15 14:33:28 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_data*	add_l_arg(void)
 	slot->suiv = NULL;
 	slot->str = NULL;
 	slot->follow = 0;
+	slot->token = DEFAULT;
 	return (slot);
 }
 
@@ -69,7 +70,7 @@ int	ft_space_case(char *str, char *cpy, int *i, char *c)
 	int	j;
 
 	j = 0;
-	while(str[(*i)] != '\0' && ft_compare(str[(*i)], c) != OK)
+	while(str[(*i)] != '\0' && ft_compare(str[(*i)], c) == N_FOUND)
 	{
 		cpy[j] = str[(*i)];
 		(*i)++;

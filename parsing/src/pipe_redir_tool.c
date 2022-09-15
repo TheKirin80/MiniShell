@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tool.c                                             :+:      :+:    :+:   */
+/*   pipe_redir_tool.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 12:08:02 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 15:19:41 by akefeder         ###   ########.fr       */
+/*   Created: 2022/09/15 11:44:43 by akefeder          #+#    #+#             */
+/*   Updated: 2022/09/15 15:17:04 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-
-
-int	ft_compare(char src, char *cmp)
+void	ft_split_slot(t_data *data)
 {
-	int	j;
+	char	*src;
+	t_data	*save;
+	int		i;
 
-	j = 0;
-	while (cmp[j] != '\0')
-	{
-		if (src == cmp[j])
-			return (FOUND);
-		j++; 
-	}
-	return (N_FOUND);
-}
-
-int	ft_compare_str(char *src, char *cmp)
-{
-	int	i;
-	
+	src = data->str;
 	i = 0;
-	while (src[i] != '\0')
+	while (src && src[i] != '\0')
 	{
-		if (ft_compare(src[i], cmp) == FOUND)
-			return (FOUND);
-		i++;
+		if (src[i] == '<')
+			
+		
 	}
-	return (N_FOUND);
+	
 }

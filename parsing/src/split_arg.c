@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/11 12:38:01 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/15 09:56:50 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 // char	*ft_select_copy(char *src, int *i)
 // {
 // 	return (ft_strcopy_char_a(str, ' ', i));
+// }
+
+// void	ft_del_arg_suiv(t_data *data)
+// {
+// 	t_data	*del;
+	
+// 	del = data->suiv;
+	
 // }
 
 t_data	*ft_quot_esp_split(char *src)
@@ -31,7 +39,7 @@ t_data	*ft_quot_esp_split(char *src)
 	{
 		while(slot->suiv != NULL)
 			slot = slot->suiv;
-		slot->str = ft_strcopy_esp_split(src, &i, " \'\"");
+		slot->str = ft_strcopy_esp_split(slot, src, &i, " \'\"");
 		if (slot->str == NULL)
 			return (NULL);
 		while(src[i] == ' ')

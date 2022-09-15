@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 06:44:59 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/11 13:00:07 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:50:29 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,29 @@ t_data*	add_l_arg(void)
 		return (NULL);
 	slot->suiv = NULL;
 	slot->str = NULL;
+	slot->follow = 0;
 	return (slot);
 }
 
-int		ft_comp_esp_split(char src)
+int		ft_comp_esp_split(t_data *slot, char src)
 {
 	if (src == '\'')
+	{
+		slot->token = S_QUOTE;
 		return (1);
+	}
 	else if (src == '\"')
+	{
+		slot->token = D_QUOTE;
 		return (2);
+	}
 	else
 	{
 		return (0);
 	}
 }
 
-void	ft_quote_case(char *str, char *cpy, int *i, char c)
+int	ft_quote_case(char *str, char *cpy, int *i, char c)
 {
 	int	j;
 
@@ -49,9 +56,15 @@ void	ft_quote_case(char *str, char *cpy, int *i, char c)
 	}
 	cpy[(j)] = '\0';
 	(*i)++;
+	if (str[(*i)] != ' ' && str[(*i)] != '\0')
+		return (FOLLOW);
+	else
+	{
+		return (N_FOLLOW);
+	}
 }
 
-void	ft_space_case(char *str, char *cpy, int *i, char *c)
+int	ft_space_case(char *str, char *cpy, int *i, char *c)
 {
 	int	j;
 
@@ -63,9 +76,15 @@ void	ft_space_case(char *str, char *cpy, int *i, char *c)
 		j++;
 	}
 	cpy[(j)] = '\0';
+	if (str[(*i)] != ' ' && str[(*i)] != '\0')
+		return (FOLLOW);
+	else
+	{
+		return (N_FOLLOW);
+	}
 }
 
-char	*ft_strcopy_esp_split(char *str, int *i, char *c)
+char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c)
 {
 	int 	choice;
 	int		len;
@@ -73,7 +92,7 @@ char	*ft_strcopy_esp_split(char *str, int *i, char *c)
 
 	while(str[(*i)] == ' ')
 			(*i)++;
-	choice = ft_comp_esp_split(str[(*i)]);
+	choice = ft_comp_esp_split(slot, str[(*i)]);
 	len = ft_strlen_char_i(str, c[choice], (*i));
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
@@ -81,11 +100,11 @@ char	*ft_strcopy_esp_split(char *str, int *i, char *c)
 	if (c[choice] == '\'' || c[choice] == '\"')
 	{	
 		(*i)++;
-		ft_quote_case(str, cpy, i, c[choice]);
+		slot->follow = ft_quote_case(str, cpy, i, c[choice]);
 	}
 	else
 	{
-		ft_space_case(str, cpy, i, c);
+		slot->follow = ft_space_case(str, cpy, i, c);
 	}
 	return (cpy);
 }

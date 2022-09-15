@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/11 12:50:42 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:28:56 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@
 
 #define ERROR		-1
 #define OK			0
+#define N_FOLLOW	0
+#define	FOLLOW		1
 #define CONTINUE	1
 #define ERR_CHECK	1
 #define ERR_SPLIT	2
@@ -58,9 +60,9 @@ typedef enum
 struct s_data
 {
 	char	*str;
-	//t_token	token;
+	t_token	token;
 	t_data	*suiv;
-	//int i;
+	int 	follow;
 };
 
 struct	s_env
@@ -83,7 +85,7 @@ int		ft_strlen_char(char *str, char c);
 int		ft_strlen_char_i(char *str, char c, int i);
 int		ft_strllen(char **str);
 t_data	*add_l_arg(void);
-char	*ft_strcopy_esp_split(char *str, int *i, char *c);
+char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c);
 t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
 void	gest_error(int code_err, t_data *data);

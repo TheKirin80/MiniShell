@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:08:02 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 15:19:41 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 00:18:18 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int	ft_compare_str(char *src, char *cmp)
 			return (FOUND);
 		i++;
 	}
+	//printf("src = %s , j'ai rien trouve\n", src);
 	return (N_FOUND);
 }

@@ -6,24 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 15:14:49 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 00:18:31 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-// char	*ft_select_copy(char *src, int *i)
-// {
-// 	return (ft_strcopy_char_a(str, ' ', i));
-// }
-
-// void	ft_del_arg_suiv(t_data *data)
-// {
-// 	t_data	*del;
-	
-// 	del = data->suiv;
-	
-// }
 
 t_data	*ft_quot_esp_split(char *src)
 {
@@ -50,16 +37,19 @@ t_data	*ft_quot_esp_split(char *src)
 	return (data);
 }
 
-t_data	*ft_pipe_redir(t_data *data)
+void	ft_pipe_redir(t_data *data)
 {
 	t_data	*slot;
 
 	slot = data;
-	while (slot->suiv != NULL)
+	while (slot != NULL)
 	{
-		if (slot->token == DEFAULT && ft_compare_str(s->str, "<|>") == FOUND)
+		if (slot->token == DEFAULT && ft_compare_str(slot->str, "<|>") == FOUND)
 		{
-			ft_split_slot(slot);
+			printf("j'ai detecte\n");
+			ft_select_split(slot);
 		}
+		printf("dans pipe redr slot->token = %i ; slot->str = |%s|\n", slot->token, slot->str);
+		slot = slot->suiv;
 	}
 }

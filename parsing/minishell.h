@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 14:28:52 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 00:00:13 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ typedef enum
 	S_R_REDIR,
 	D_R_REDIR,
 	S_QUOTE,
-	D_QUOTE
+	D_QUOTE,
+	EX_CODE
 }	t_token;
 
 struct s_data
@@ -79,9 +80,10 @@ struct	s_env
 int		add_l_env(char *env, t_env *my_env);
 t_env	*init_l_env(char **env);
 char	*ft_strcopy(char *str);
-char	*ft_strcopy_int(char *str, int i);
+char	*ft_strcopy_int(char *str, int *i);
+char	*ft_strcopy_char(char *str, char c);
 char	*ft_strcopy_char_e(char *str, char c, int *i);
-int		ft_split_env(t_env *env, char c);
+//int		ft_split_env(t_env *env, char c);
 int		ft_strlen(char *str);
 int		ft_strlen_int(char *str, int i);
 int		ft_strlen_char(char *str, char c);
@@ -96,4 +98,11 @@ int		check_error_parse(char *s);
 int		ft_compare(char src, char *cmp);
 int		ft_compare_str(char *src, char *cmp);
 int		check_space(char *s);
+void	ft_select_split(t_data *data);
+void	ft_pipe_redir(t_data *data);
+t_data*	add_pipe_token(void);
+t_data*	add_s_l_redir_token(void);
+t_data*	add_s_r_redir_token(void);
+t_data*	add_d_l_redir_token(void);
+t_data*	add_d_r_redir_token(void);
 #endif

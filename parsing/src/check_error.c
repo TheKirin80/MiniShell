@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:47:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/10 12:29:24 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 00:25:09 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	ft_test_redir_r(char *s, int *i)
 			return (ERROR);
 		(*i) = j + 1;
 	}
-	return (ERROR);
+	return (OK);
 }
 
 int	check_error_parse(char *s)

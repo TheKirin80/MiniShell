@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 10:59:01 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 00:27:15 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ t_data	*parsing(char *s)
 	data = ft_quot_esp_split(s);
 	if (data == NULL)
 		return (gest_error(ERR_SPLIT, data), NULL);
-	
+	ft_pipe_redir(data);
 	printer = data;
 	i = 0;
 	while (printer != NULL)
 	{
-		printf("%i : |%s| / Follow : %i\n", i, printer->str, printer->follow);
+		printf("%i : |%s| / Follow : %i / Token : %i\n", i, printer->str, printer->follow, printer->token);
 		i++;
 		printer = printer->suiv;
 	}

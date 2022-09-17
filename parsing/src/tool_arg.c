@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 02:23:40 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 02:58:26 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:21:41 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,25 @@ void	del_l_arg(t_data *data)
 void	clean_list(t_data *slot)
 {
 	t_data *save;
+	int n_vid;
 	
 	save = NULL;
 	while(slot != NULL)
 	{
-		if (slot->suiv != NULL && slot->suiv->str != NULL
-			&& slot->suiv->str[0] == '\0')
+		n_vid = 0;
+		while (slot->suiv != NULL && slot->suiv->token == 0 && n_vid == 0)
 		{
-			save = slot->suiv->suiv;
-			del_l_arg(slot->suiv);
-			slot->suiv = save;
+			if (slot->suiv->str == NULL
+				|| slot->suiv->str[0] == '\0')
+			{
+				save = slot->suiv->suiv;
+				del_l_arg(slot->suiv);
+				slot->suiv = save;
+			}
+			else
+			{
+				n_vid = 1;
+			}
 		}
 		slot = slot->suiv;
 	}

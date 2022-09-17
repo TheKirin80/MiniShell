@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 02:48:49 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:15:18 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef	struct s_env	t_env;
 
 typedef enum 
 { 
-	DEFAULT,
+	DEFAULT, 
 	CMD,
 	OPT,
 	ARG,

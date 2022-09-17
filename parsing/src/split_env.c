@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 00:23:25 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:35:40 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strcopy_int(char *str, int *i)
 
 	j = 0;
 	len = ft_strlen_int(str, *i);
-	printf("%s %i\n", str, len);
+	//printf("%s %i\n", str, len);
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);

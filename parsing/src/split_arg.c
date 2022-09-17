@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 02:57:29 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 17:57:29 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_data	*ft_pipe_redir(t_data *data)
 	}
 	slot = data;
 	clean_list(slot);
-	if (data->str != NULL && data->str[0] == '\0')
+	if (data->str != NULL && data->token == 0 && data->str[0] == '\0')
 	{
 		save = data->suiv;
 		del_l_arg(data);

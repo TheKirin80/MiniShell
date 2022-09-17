@@ -1,5 +1,7 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/akefeder/Documents/MiniShell'
-make: Nothing to be done for 'all'.
+make --no-print-directory -C parsing
+make --no-print-directory -C exec
+clang -Wall -Wextra -Werror   -o parsing
 make: Leaving directory '/mnt/nfs/homes/akefeder/Documents/MiniShell'
  

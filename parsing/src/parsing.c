@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 18:14:31 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 23:52:36 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_data	*parsing(char *s)
 	if (data == NULL)
 		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_pipe_redir(data);
+	if (data == NULL)
+		return (NULL);
 	printer = data;
 	i = 0;
 	while (printer != NULL)

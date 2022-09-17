@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 17:57:29 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:24:23 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ t_data	*ft_pipe_redir(t_data *data)
 	{
 		if (slot->token == DEFAULT && ft_compare_str(slot->str, "<|>") == FOUND)
 			ft_select_split(slot);
+		if (slot == NULL)
+			return (gest_error(ERR_SPLIT, data), NULL);
 		slot = slot->suiv;
 	}
 	slot = data;

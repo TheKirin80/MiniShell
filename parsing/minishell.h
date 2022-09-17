@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 18:15:18 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:40:23 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	clean_list(t_data *slot);
 char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c);
 t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
+void	free_parse(t_data *data);
 void	gest_error(int code_err, t_data *data);
 int		check_error_parse(char *s);
 int		ft_compare(char src, char *cmp);

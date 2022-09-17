@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 15:35:40 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 23:24:18 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*ft_strcopy_int(char *str, int *i)
 		j++;
 		(*i)++;
 	}
-	cpy[(*i)] = '\0';
+	cpy[j] = '\0';
 	return (cpy);
 }
 

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:47:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 00:25:09 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 23:42:10 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ int	ft_test_redir_l(char *s, int *i)
 	int	j;
 
 	j = (*i);
-	if (j == 0 && s[1] != '<')
-		return (ERROR);
 	if (s[j + 1] == '\0')
 		return (ERROR);
 	if (s[j + 1] == '<')

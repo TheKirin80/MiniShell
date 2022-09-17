@@ -6,12 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Sep 17 00:00:51 2022
+# Make data base, printed on Sat Sep 17 02:25:08 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -99,6 +98,7 @@ XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/akefeder
 LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
+ 
 # environment
 SSH_AUTH_SOCK = /run/user/35726/keyring/ssh
 # environment
@@ -298,7 +298,6 @@ fclean: clean
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -313,7 +312,7 @@ clean:
 
 parsing:
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-16 23:54:18.122250768
+#  Last modified 2022-09-17 02:15:18.660100378
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 25):
@@ -335,6 +334,6 @@ parsing:
 # strcache performance: lookups = 39 / hit rate = 53%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Sat Sep 17 00:00:51 2022
+# Finished Make data base on Sat Sep 17 02:25:08 2022
 
  

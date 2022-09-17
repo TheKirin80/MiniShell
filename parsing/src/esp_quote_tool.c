@@ -6,25 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:11 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/15 14:33:28 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 02:24:36 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-t_data*	add_l_arg(void)
-{
-	t_data	*slot;
-
-	slot = malloc(1 * sizeof(t_data));
-	if (slot == NULL)
-		return (NULL);
-	slot->suiv = NULL;
-	slot->str = NULL;
-	slot->follow = 0;
-	slot->token = DEFAULT;
-	return (slot);
-}
 
 int		ft_comp_esp_split(t_data *slot, char src)
 {

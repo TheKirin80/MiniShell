@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 00:00:13 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/17 02:48:49 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int		ft_strlen_char(char *str, char c);
 int		ft_strlen_char_i(char *str, char c, int i);
 int		ft_strllen(char **str);
 t_data	*add_l_arg(void);
+void	del_l_arg(t_data *data);
+void	clean_list(t_data *slot);
 char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c);
 t_data	*ft_quot_esp_split(char *src);
 t_data	*parsing(char *s);
@@ -99,7 +101,7 @@ int		ft_compare(char src, char *cmp);
 int		ft_compare_str(char *src, char *cmp);
 int		check_space(char *s);
 void	ft_select_split(t_data *data);
-void	ft_pipe_redir(t_data *data);
+t_data	*ft_pipe_redir(t_data *data);
 t_data*	add_pipe_token(void);
 t_data*	add_s_l_redir_token(void);
 t_data*	add_s_r_redir_token(void);

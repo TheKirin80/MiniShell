@@ -9,6 +9,7 @@ SRC_FILES	=	main.c\
 				split_arg.c\
 				split_env.c\
 				strlen.c\
+				tool_arg.c\
 				esp_quote_tool.c\
 				pipe_redir_tool.c\
 				token_generator.c\

@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 23:52:36 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:10:46 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-t_data	*parsing(char *s)
+t_data	*parsing(char *s, char **env)
 {
 	t_data	*printer;
 	t_data	*data;
@@ -26,8 +26,11 @@ t_data	*parsing(char *s)
 	if (data == NULL)
 		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_pipe_redir(data);
+	data = ft_search_expand(data, env);
 	if (data == NULL)
 		return (NULL);
+	
+	//data = ft_expand(data, env)
 	printer = data;
 	i = 0;
 	while (printer != NULL)

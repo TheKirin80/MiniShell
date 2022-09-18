@@ -2,6 +2,7 @@ SRC_DIR	= src
 
 SRC_FILES	=	main.c\
 				tool.c\
+				tool_2.c\
 				check_error.c\
 				check_error_2.c\
 				gest_error.c\
@@ -13,6 +14,7 @@ SRC_FILES	=	main.c\
 				esp_quote_tool.c\
 				pipe_redir_tool.c\
 				token_generator.c\
+				expand.c\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

@@ -6,11 +6,24 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:44:08 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 19:13:22 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:04:32 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+void	free_str(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
 void	free_parse(t_data *data)
 {

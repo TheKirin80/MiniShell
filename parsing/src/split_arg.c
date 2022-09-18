@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 19:24:23 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:00:57 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,27 @@ t_data	*ft_pipe_redir(t_data *data)
 		save = data->suiv;
 		del_l_arg(data);
 		data = save;
+	}
+	return (data);
+}
+
+t_data	*ft_search_expand(t_data *data, char **env)
+{
+	t_data	*slot;
+
+	slot = data;
+	while (slot != NULL)
+	{
+		if (slot->token != S_QUOTE)
+		{
+			if (ft_compare_char(slot->str,'$') == FOUND)
+			{
+				ft_expand(slot, env);
+				if (slot->str == NULL)
+					return(gest_error(ERR_SPLIT, data), NULL);
+			}
+		}
+		slot = slot->suiv;
 	}
 	return (data);
 }

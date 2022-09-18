@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Sep 17 23:19:02 2022
+# Make data base, printed on Sun Sep 18 15:11:28 2022
 
 # Variables
 
@@ -22,6 +22,7 @@ DESKTOP_SESSION = ubuntu
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -41,11 +42,11 @@ RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/bin/dbus-update-activation-environment
+_ = /usr/share/code/code
 # makefile (from 'Makefile', line 17)
 CFLAGS = -Wall -Wextra -Werror 
 # environment
-JOURNAL_STREAM = 9:2014513
+JOURNAL_STREAM = 9:5672019
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -65,21 +66,23 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/35726/bus
 # makefile (from 'Makefile', line 9)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 154833
+MANAGERPID = 329988
 # environment
 VSCODE_CWD = /mnt/nfs/homes/akefeder
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_35726_TjFn9M
+KRB5CCNAME = FILE:/tmp/krb5cc_35726_E7RnCv
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /mnt/nfs/homes/akefeder/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/35726/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r8p21.clusters.42paris.fr:@/tmp/.ICE-unix/155606,unix/e1r8p21.clusters.42paris.fr:/tmp/.ICE-unix/155606
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+SESSION_MANAGER = local/e1r5p12.clusters.42paris.fr:@/tmp/.ICE-unix/330619,unix/e1r5p12.clusters.42paris.fr:/tmp/.ICE-unix/330619
 # environment
 XDG_RUNTIME_DIR = /run/user/35726
 # environment
@@ -87,17 +90,19 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e4dcfd6c8a4d4c5f8a8b1c4a2c9d9844
+INVOCATION_ID = e6388161262042e4a6a4e31cead478db
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/akefeder
 # environment
+LS_COLORS = 
+# environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/35726/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 156296
+GIO_LAUNCHED_DESKTOP_FILE_PID = 333810
 # automatic
 %F = $(notdir $%)
 # environment
@@ -107,7 +112,7 @@ PWD = /mnt/nfs/homes/akefeder/Documents/MiniShell
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 155556
+SSH_AGENT_PID = 330566
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -122,6 +127,8 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/akefeder/.config/Code/CachedData/784b017
 LOGNAME = akefeder
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /mnt/nfs/homes/akefeder/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -154,12 +161,16 @@ USER = akefeder
 XDG_CURRENT_DESKTOP = Unity
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
 # makefile (from 'Makefile', line 7)
 INC = -I includes -I /usr/include
+# environment
+OLDPWD = /mnt/nfs/homes/akefeder
 # default
 .VARIABLES := 
 # automatic
@@ -191,6 +202,8 @@ SRC_DIR = src
 # automatic
 <F = $(notdir $<)
 # environment
+PAGER = less
+# environment
 LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
@@ -215,9 +228,9 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/35726/docker.sock
 # environment
-VSCODE_PID = 156296
+VSCODE_PID = 333810
 # variable set hash-table stats:
-# Load=103/1024=10%, Rehash=0, Collisions=15/134=11%
+# Load=109/1024=11%, Rehash=0, Collisions=15/140=11%
 
 # Pattern-specific Variable Values
 
@@ -279,7 +292,6 @@ fclean: clean
 
 # Not a target:
 .DEFAULT:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -290,7 +302,9 @@ re: fclean all
 #  File does not exist.
 #  File has not been updated.
 
+ 
 clean:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -300,7 +314,7 @@ clean:
 
 parsing:
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-17 19:40:47.862313096
+#  Last modified 2022-09-18 15:10:55.003438042
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 25):
@@ -322,6 +336,6 @@ parsing:
 # strcache performance: lookups = 39 / hit rate = 53%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Sat Sep 17 23:19:02 2022
+# Finished Make data base on Sun Sep 18 15:11:28 2022
 
  

@@ -1,2 +1,4 @@
-salut 
-coucou
+Makefile
+minishell.h
+src
+test

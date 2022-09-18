@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 19:40:23 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:13:20 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_env	*init_l_env(char **env);
 char	*ft_strcopy(char *str);
 char	*ft_strcopy_int(char *str, int *i);
 char	*ft_strcopy_char(char *str, char c);
+char	*ft_strcopy_char_i(char *str, char c, int *i);
 char	*ft_strcopy_char_e(char *str, char c, int *i);
 //int		ft_split_env(t_env *env, char c);
 int		ft_strlen(char *str);
@@ -94,12 +95,15 @@ void	del_l_arg(t_data *data);
 void	clean_list(t_data *slot);
 char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c);
 t_data	*ft_quot_esp_split(char *src);
-t_data	*parsing(char *s);
+t_data	*parsing(char *s, char **env);
+void	free_str(char **str);
 void	free_parse(t_data *data);
 void	gest_error(int code_err, t_data *data);
 int		check_error_parse(char *s);
 int		ft_compare(char src, char *cmp);
 int		ft_compare_str(char *src, char *cmp);
+int		ft_compare_char(char *src, char cmp);
+int		ft_count_compare(char *src, char cmp);
 int		check_space(char *s);
 void	ft_select_split(t_data *data);
 t_data	*ft_pipe_redir(t_data *data);
@@ -108,4 +112,8 @@ t_data*	add_s_l_redir_token(void);
 t_data*	add_s_r_redir_token(void);
 t_data*	add_d_l_redir_token(void);
 t_data*	add_d_r_redir_token(void);
+t_data	*ft_search_expand(t_data *data, char **env);
+int		ft_strstrcmp(char **env, char *str);
+char	*ft_strjoin(char **str);
+void	ft_expand(t_data *data, char **env);
 #endif

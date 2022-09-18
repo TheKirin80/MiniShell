@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:47:32 by akefeder          #+#    #+#             */
-/*   Updated: 2022/08/25 16:49:17 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 14:47:26 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,22 @@ int	ft_strlen_char_i(char *str, char c, int i)
 int	ft_strllen(char **str)
 {
 	int	i;
+	int j;
+	int cpt;
 
 	i = 0;
+	cpt = 0;
 	while (str[i] != NULL)
+	{
+		j = 0;
+		while (str[i][j] != '\0')
+		{
+			j++;
+			cpt++;
+		}
 		i++;
-	return (i);
+	}
+	return (cpt);
 }
 
 

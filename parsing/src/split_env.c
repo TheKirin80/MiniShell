@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 14:13:40 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:53:02 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 char	*ft_strcopy(char *str)
 {

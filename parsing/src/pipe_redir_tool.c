@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:43 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 19:40:45 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:47 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 void	ft_split_l_redir(t_data *data, char *src, int *i)
 {

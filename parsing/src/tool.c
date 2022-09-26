@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:08:02 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:10:09 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/24 20:58:05 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 
 
@@ -58,21 +58,21 @@ int	ft_compare_char(char *src, char cmp)
 	return (N_FOUND);
 }
 
-int	ft_count_compare(char *src, char cmp)
-{
-	int	i;
-	int	j;
+// int	ft_count_compare(char *src, char cmp)
+// {
+// 	int	i;
+// 	int	j;
 	
-	i = 0;
-	if (src[i] == cmp)
-		j = 0;
-	else
-		j = 1;
-	while (src[i] != '\0')
-	{
-		if (src[i] == cmp)
-			j++;
-		i++;
-	}
-	return (j);
-}
+// 	i = 0;
+// 	if (src[i] == cmp)
+// 		j = 0;
+// 	else
+// 		j = 1;
+// 	while (src[i] != '\0')
+// 	{
+// 		if (src[i] == cmp)
+// 			j++;
+// 		i++;
+// 	}
+// 	return (j);
+// }

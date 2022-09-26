@@ -15,6 +15,7 @@ SRC_FILES	=	main.c\
 				pipe_redir_tool.c\
 				token_generator.c\
 				expand.c\
+				after_expand_tool.c\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

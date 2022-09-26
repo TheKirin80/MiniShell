@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 02:23:40 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 18:21:41 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:33:01 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 t_data*	add_l_arg(void)
 {

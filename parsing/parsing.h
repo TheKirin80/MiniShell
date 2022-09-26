@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:13:20 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/24 21:15:35 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef PARSING_H
+# define PARSING_H
 
 # include <stdio.h>
 # include <readline/readline.h>
@@ -77,8 +77,6 @@ struct	s_env
 	t_env	*suiv;
 };
 
-int		add_l_env(char *env, t_env *my_env);
-t_env	*init_l_env(char **env);
 char	*ft_strcopy(char *str);
 char	*ft_strcopy_int(char *str, int *i);
 char	*ft_strcopy_char(char *str, char c);
@@ -116,4 +114,9 @@ t_data	*ft_search_expand(t_data *data, char **env);
 int		ft_strstrcmp(char **env, char *str);
 char	*ft_strjoin(char **str);
 void	ft_expand(t_data *data, char **env);
+t_data	*ft_after_expand(t_data	*data);
+void	ft_split_space(t_data *data);
+int		ft_min(char c);
+int		ft_maj(char c);
+int		ft_alpha(char c);
 #endif

@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:11 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 02:24:36 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:34 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 int		ft_comp_esp_split(t_data *slot, char src)
 {

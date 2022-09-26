@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:44:08 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:04:32 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:40 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 void	free_str(char **str)
 {

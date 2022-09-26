@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:47:32 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 14:47:26 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:54 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 int	ft_strlen(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:10:46 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:13:03 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 t_data	*parsing(char *s, char **env)
 {
@@ -27,6 +27,7 @@ t_data	*parsing(char *s, char **env)
 		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_pipe_redir(data);
 	data = ft_search_expand(data, env);
+	data = ft_after_expand(data);
 	if (data == NULL)
 		return (NULL);
 	

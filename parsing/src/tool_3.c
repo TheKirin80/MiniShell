@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error_2.c                                    :+:      :+:    :+:   */
+/*   tool_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 12:43:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:25 by akefeder         ###   ########.fr       */
+/*   Created: 2022/09/24 21:11:12 by akefeder          #+#    #+#             */
+/*   Updated: 2022/09/24 21:15:06 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsing.h"
+#include "../minishell.h"
 
-int	check_space(char *s)
+int ft_alpha(char c)
 {
-	int	i;
+	if (c > 47 && c < 58)
+		return (FOUND);
+	return (N_FOUND);
+}
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != ' ')
-			return (OK);
-		i++;
-	}
-	return (ERROR);
+int ft_maj(char c)
+{
+	if (c > 64 && c < 91)
+		return (FOUND);
+	return (N_FOUND);
+}
+
+int ft_min(char c)
+{
+	if (c > 96 && c < 123)
+		return (FOUND);
+	return (N_FOUND);
 }

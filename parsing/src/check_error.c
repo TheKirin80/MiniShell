@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:47:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/17 23:42:10 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:31 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 int	ft_find_end(char *s, int *i, char c)
 {

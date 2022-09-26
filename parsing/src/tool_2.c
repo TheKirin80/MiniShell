@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:10:32 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:32:58 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 int	ft_strcmp(char *env, char *str)
 {

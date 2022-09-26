@@ -6,11 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:00:57 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:12:22 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../parsing.h"
 
 t_data	*ft_quot_esp_split(char *src)
 {
@@ -74,6 +74,27 @@ t_data	*ft_search_expand(t_data *data, char **env)
 			if (ft_compare_char(slot->str,'$') == FOUND)
 			{
 				ft_expand(slot, env);
+				if (slot->str == NULL)
+					return(gest_error(ERR_SPLIT, data), NULL);
+			}
+		}
+		slot = slot->suiv;
+	}
+	return (data);
+}
+
+t_data	*ft_after_expand(t_data	*data)
+{
+	t_data	*slot;
+
+	slot = data;
+	while (slot != NULL)
+	{
+		if (slot->token != S_QUOTE && slot->token != D_QUOTE)
+		{
+			if (ft_compare_char(slot->str,' ') == FOUND)
+			{
+				ft_split_space(slot);
 				if (slot->str == NULL)
 					return(gest_error(ERR_SPLIT, data), NULL);
 			}

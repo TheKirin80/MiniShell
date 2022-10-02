@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun Oct  2 12:26:07 2022
+# Make data base, printed on Sun Oct  2 17:25:19 2022
 
 # Variables
 
@@ -97,7 +98,6 @@ VSCODE_PID = 2274059
 # environment
 KRB5CCNAME = FILE:/tmp/krb5cc_35726_dxXPYy
 # environment
- 
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -310,8 +310,9 @@ fclean: clean
 			@make clean --no-print-directory  -C parsing/
 
 parsing:
+ 
 #  Implicit rule search has not been done.
-#  Last modified 2022-10-02 12:25:32.274618473
+#  Last modified 2022-10-02 17:18:47.974375113
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 25):
@@ -338,6 +339,6 @@ parsing:
 # strcache performance: lookups = 39 / hit rate = 53%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Sun Oct  2 12:26:07 2022
+# Finished Make data base on Sun Oct  2 17:25:19 2022
 
  

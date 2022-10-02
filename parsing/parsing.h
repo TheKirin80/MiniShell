@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 12:21:42 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/02 17:25:24 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,14 @@ int		ft_min(char c);
 int		ft_maj(char c);
 int		ft_num(char c);
 void	printer(char **exp);
+char	*ft_strcopy_spec(char *str, int j);
+char	**add_one_str(char **exp, char *str);
+int		found_split(char *s, int dollar, int j, int i);
+void	change_dollar(char *str, int *dollar, int i);
+char	**select_found(int cpt[3], int *dollar, char **exp, char *str);
+int		ft_strstrlen(char **str);
+char	*ft_strcopy_i_j(char *str, int i, int j);
+char	**ft_split_exp(char *str);
 #endif
 
 //"sdasa$asdad$aDa$zsda$$$$AASdAs$?adads"

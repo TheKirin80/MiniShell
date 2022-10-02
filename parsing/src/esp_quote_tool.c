@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:11 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:34 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:39:37 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_quote_case(char *str, char *cpy, int *i, char c)
 		(*i)++;
 		j++;
 	}
-	cpy[(j)] = '\0';
+	cpy[j] = '\0';
 	(*i)++;
 	if (str[(*i)] != ' ' && str[(*i)] != '\0')
 		return (FOLLOW);

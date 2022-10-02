@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 00:22:14 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/25 19:03:11 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/02 15:55:06 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,13 @@ char	*modif_exp(char **exp, int j, char **env)
 {
 	int i;
 
+	//printf("je suis ici\n");
 	while (exp[j] != NULL)
 	{
 		i = 0;
-		if (exp[j][0] == '\0')
+		if (exp[j][0] == '$' && exp[j][1] == '\0')
 			exp[j] = dollar_case(exp, j);
-		else
+		else if (exp[j][0] == '$')
 		{
 			i = ft_strstrcmp(env, exp[j]);
 			if (i == ERROR)
@@ -67,33 +68,6 @@ char	*modif_exp(char **exp, int j, char **env)
 	return (ft_strjoin(exp));
 }
 
-void	ft_expand(t_data *data, char **env)
-{
-	int		len_deb;
-	char	**exp;
-	int		i;
-	int		j;
-	
-	//len_deb = ft_count_compare(data->str, '$');
-	exp = malloc((len_deb + 1) * sizeof(char *));
-	i = 0;
-	j = 0;
-	len_deb = 0;
-	if (data->str[i] != '$')
-		len_deb = 1;
-	while(data->str[i]!= '\0')
-	{
-		if (data->str[i] == '$')
-			i++;
-		exp[j] = ft_strcopy_char_i(data->str, '$', &i);
-		j++;
-	}
-	exp[j] = NULL;
-	j = len_deb;
-	free(data->str);
-	data->str = modif_exp(exp , j, env);
-}
-
 int		ft_strstrlen(char **str)
 {
 	int	i;
@@ -104,29 +78,24 @@ int		ft_strstrlen(char **str)
 	return (i);
 }
 
-int		ft_strlen_i_j(char *str, int *i, int *j)
-{
-	
-}
-
-char	*ft_strcopy_i_j(char *str, char *i, int *j)
+char	*ft_strcopy_i_j(char *str, int i, int j)
 {
 	int		len;
-	int		j;
+	int		k;
 	char	*cpy;
 
-	j = 0;
-	len = ft_strlen_i_j(str, *i, *j);
-	cpy = malloc ((len + 1) * sizeof(char));
+	k = 0;
+	len = j - i;
+	cpy = malloc ((len + 2) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);
-	while (str[(*i)] != c && str[(*i)] != '\0')
+	while (i < j && str[i] != '\0')
 	{
-		cpy[j] = str[(*i)];
-		(*i)++;
-		j++;
+		cpy[k] = str[i];
+		i++;
+		k++;
 	}
-	cpy[j] = '\0';
+	cpy[k] = '\0';
 	return (cpy);
 }
 
@@ -136,44 +105,84 @@ char	**add_one_str(char **exp, char *str)
 	int		i;	
 	
 	i = 0;
-	cpy = malloc ((ft_strstrlen(str) + 2) * sizeof(char *));
-	while (exp[i] != NULL)
+	cpy = malloc ((ft_strstrlen(exp) + 2) * sizeof(char *));
+	while (exp != NULL && exp[i] != NULL)
 	{
 		cpy[i] = exp[i];
+		i++;
 	}
 	cpy[i] = str;
 	i++;
-	cpy[i] = i++;
+	cpy[i] = NULL;
 	free(exp);
 	return (cpy);
+}
+
+int		found_split(char *s, int dollar, int j, int i)
+{
+	if (dollar == 0)
+	{
+		if (s[i] == '$')
+			return (FOUND);
+	}
+	else
+	{
+		if (j + 1 == i && (ft_num(s[i]) == FOUND || (s[i] == '?')))
+			return (SPEC);
+		else if (ft_maj(s[i]) == N_FOUND && ft_min(s[i]) == N_FOUND
+			&& ft_num(s[i]) == N_FOUND)
+			return (FOUND);
+	}
+	return (N_FOUND);
+}
+
+void	change_dollar(char **exp, int *dollar)
+{
+	int	i;
+
+	i = 0;
+	while (exp[i] != NULL)
+		i++;
+	i--;
+	if (exp[i][0] == '$')
+		(*dollar) = 1;
+	else
+		(*dollar) = 0;
 }
 
 char	**ft_split_exp(char *str)
 {
 	char	**exp;
 	int		i;
+	int 	j;
 	int		dollar;
 	
 	exp = NULL;
 	i = 0;
+	j = 0;
 	dollar = 0;
 	while (str[i] != '\0')
 	{
-		if (dollar == 0)
-			if (str[i] == $)
-			{
-				exp = add_one_str(exp, )
-			}
-		if (str[i] ==
+		if (found_split(str, dollar, j, i) == FOUND)
+		{
+			exp = add_one_str(exp, ft_strcopy_i_j(str, j, i));
+			j = i;
+			change_dollar(exp, &dollar);
+		}
+		i++;
 	}
+	exp = add_one_str(exp, ft_strcopy_i_j(str, j, i));	
+	return (exp);
 }
 
 void	ft_expand(t_data *data, char **env)
 {
-	char **exp;
+	char	**exp;
+	int		i;
 	
+	i = 0;
 	exp = ft_split_exp(data->str);
-	
-	
+	printer(exp);
+	free(data->str);
+	data->str = modif_exp(exp , i, env);
 }
-

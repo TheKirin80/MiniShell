@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep 26 15:34:17 2022
+# Make data base, printed on Sun Oct  2 12:26:07 2022
 
 # Variables
 
@@ -26,6 +26,8 @@ SRC_DIR = src
 VSCODE_CWD = /mnt/nfs/homes/akefeder
 # environment
 LIBVIRT_DEFAULT_URI = qemu:///system
+# environment
+GDM_LANG = en
 # default
 MAKE_COMMAND := make
 # environment
@@ -53,7 +55,7 @@ OLDPWD = /mnt/nfs/homes/akefeder
 # environment
 VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/akefeder/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session41
 # environment
 LANG = C
 # environment
@@ -91,15 +93,16 @@ MAKEFILE_LIST := Makefile
 # environment
 ZSH = /mnt/nfs/homes/akefeder/.oh-my-zsh
 # environment
-VSCODE_PID = 139034
+VSCODE_PID = 2274059
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_35726_G7J029
+KRB5CCNAME = FILE:/tmp/krb5cc_35726_dxXPYy
 # environment
+ 
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/e1r5p2.clusters.42paris.fr:@/tmp/.ICE-unix/138080,unix/e1r5p2.clusters.42paris.fr:/tmp/.ICE-unix/138080
+SESSION_MANAGER = local/e1r3p7.clusters.42paris.fr:@/tmp/.ICE-unix/2273417,unix/e1r3p7.clusters.42paris.fr:/tmp/.ICE-unix/2273417
 # automatic
 *F = $(notdir $*)
 # environment
@@ -134,10 +137,12 @@ MAKE = $(MAKE_COMMAND)
 PATH = /mnt/nfs/homes/akefeder/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # default
 MAKEFILES := 
+# environment
+LANGUAGE = en
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = c37d4770cd064219a9b80b4119faf18a
+INVOCATION_ID = e256ecf1c34344c1a60ca184db3d2a0a
 # environment
 DOCKER_HOST = unix:///run/user/35726/docker.sock
 # automatic
@@ -169,7 +174,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 138103
+SYSTEMD_EXEC_PID = 2273436
 # makefile (from 'Makefile', line 15)
 RM = rm -f
 # environment
@@ -185,9 +190,9 @@ MAKE_VERSION := 4.3
 # makefile (from 'Makefile', line 3)
 SRC_FILES = 
 # environment
-MANAGERPID = 137532
+MANAGERPID = 2272865
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 139034
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2274059
 # environment
 PAGER = less
 # environment
@@ -199,7 +204,7 @@ CFLAGS = -Wall -Wextra -Werror
 # environment
 GPG_AGENT_INFO = /run/user/35726/gnupg/S.gpg-agent:0:1
 # environment
-JOURNAL_STREAM = 8:741320
+JOURNAL_STREAM = 8:10864033
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -229,7 +234,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=7/145=5%
+# Load=111/1024=11%, Rehash=0, Collisions=8/147=5%
 
 # Pattern-specific Variable Values
 
@@ -283,7 +288,6 @@ re: fclean all
 
 # Not a target:
 .DEFAULT:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -307,7 +311,7 @@ fclean: clean
 
 parsing:
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-24 20:52:30.071277909
+#  Last modified 2022-10-02 12:25:32.274618473
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 25):
@@ -334,6 +338,6 @@ parsing:
 # strcache performance: lookups = 39 / hit rate = 53%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Mon Sep 26 15:34:17 2022
+# Finished Make data base on Sun Oct  2 12:26:07 2022
 
  

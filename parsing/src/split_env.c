@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/25 18:53:02 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/01 16:21:22 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ char	*ft_strcopy_char_i(char *str, char c, int *i)
 
 	j = 0;
 	len = ft_strlen_char(str, c);
+	//Leak si str == NULL ????
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);

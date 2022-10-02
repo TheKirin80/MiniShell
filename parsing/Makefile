@@ -1,8 +1,10 @@
 SRC_DIR	= src
 
 SRC_FILES	=	main.c\
+				printer.c\
 				tool.c\
 				tool_2.c\
+				tool_3.c\
 				check_error.c\
 				check_error_2.c\
 				gest_error.c\
@@ -29,7 +31,7 @@ CC 		= clang
 
 RM 		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror #-fsanitize=address -O3 
+CFLAGS	= -Wall -Wextra -Werror -g#-fsanitize=address -O3 
 
 all:		${NAME}
 

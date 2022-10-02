@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tool_3.c                                           :+:      :+:    :+:   */
+/*   printer.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 21:11:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 01:58:56 by akefeder         ###   ########.fr       */
+/*   Created: 2022/10/02 11:10:15 by akefeder          #+#    #+#             */
+/*   Updated: 2022/10/02 11:12:52 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-int ft_num(char c)
+void	printer(char **exp)
 {
-	if (c > 47 && c < 58)
-		return (FOUND);
-	return (N_FOUND);
-}
+	int i = 0;
 
-int ft_maj(char c)
-{
-	if (c > 64 && c < 91)
-		return (FOUND);
-	return (N_FOUND);
-}
-
-int ft_min(char c)
-{
-	if (c > 96 && c < 123)
-		return (FOUND);
-	return (N_FOUND);
+	while (exp[i] != NULL)
+	{
+		printf("str %i : %s\n", i, exp[i]);
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/24 21:15:35 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/02 12:21:42 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 #define	FOLLOW		1
 #define CONTINUE	1
 #define ERR_CHECK	1
+#define SPEC		2
 #define ERR_SPLIT	2
 #define END			3
 
@@ -118,5 +119,8 @@ t_data	*ft_after_expand(t_data	*data);
 void	ft_split_space(t_data *data);
 int		ft_min(char c);
 int		ft_maj(char c);
-int		ft_alpha(char c);
+int		ft_num(char c);
+void	printer(char **exp);
 #endif
+
+//"sdasa$asdad$aDa$zsda$$$$AASdAs$?adads"

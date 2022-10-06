@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/23 17:12:22 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/06 03:11:05 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ t_data	*ft_quot_esp_split(char *src)
 		data = add_l_arg();
 	slot = data;
 	i = 0;
-	while (src[i] != '\0')
+	while (slot && src[i] != '\0')
 	{
 		while(slot->suiv != NULL)
 			slot = slot->suiv;
 		slot->str = ft_strcopy_esp_split(slot, src, &i, " \'\"");
 		if (slot->str == NULL)
-			return (NULL);
+			return (gest_error(ERR_SPLIT, data), NULL);
 		while(src[i] == ' ')
 			i++;
 		if (src[i] != '\0')
@@ -100,6 +100,25 @@ t_data	*ft_after_expand(t_data	*data)
 			}
 		}
 		slot = slot->suiv;
+	}
+	ft_join_arg(data);
+	return (data);
+}
+
+t_data	*ft_last_error(t_data *data)
+{
+	t_data	*slot;
+
+	slot = data;
+	while(slot != NULL)
+	{
+		if (ft_cmp_token(slot) == FOUND && ft_cmp_token(slot->suiv) == FOUND)
+		{
+			gest_error(ERR_CHECK, data);
+			slot = NULL;
+		}
+		else
+			slot=slot->suiv;
 	}
 	return (data);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error_2.c                                    :+:      :+:    :+:   */
+/*   last_error_tool.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/11 12:43:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 02:28:01 by akefeder         ###   ########.fr       */
+/*   Created: 2022/10/06 02:10:29 by akefeder          #+#    #+#             */
+/*   Updated: 2022/10/06 02:15:59 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-int	check_space(char *s)
+int	ft_cmp_token(t_data *data)
 {
-	int	i;
-
-	i = 0;
-	while (s && s[i] != '\0')
-	{
-		if (s[i] != ' ')
-			return (OK);
-		i++;
-	}
-	return (ERROR);
+	if (data && data->token > ARG && data->token < S_QUOTE)
+		return (FOUND);
+	return (N_FOUND);
 }

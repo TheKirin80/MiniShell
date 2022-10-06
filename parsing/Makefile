@@ -20,6 +20,7 @@ SRC_FILES	=	main.c\
 				expand_2.c\
 				expand_3.c\
 				after_expand_tool.c\
+				last_error_tool.c\
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -33,7 +34,7 @@ CC 		= clang
 
 RM 		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -g#-fsanitize=address -O3 
+CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address -fsanitize=undefined -fsanitize=leak
 
 all:		${NAME}
 
@@ -42,6 +43,9 @@ all:		${NAME}
 
 ${NAME}:	${OBJS}
 			$(CC) $(CFLAGS) $(OBJS) -lreadline -o $(NAME)
+
+malloc_test: $(OBJS)
+			$(CC) $(CFLAGS) -fsanitize=undefined -rdynamic -o $@ ${OBJS} -lreadline -L. -lmallocator
 
 clean:		
 			${RM} ${OBJS} ${OBJSBON}

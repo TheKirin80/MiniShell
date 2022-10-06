@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/23 17:22:55 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/06 02:04:24 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,54 @@ void	ft_split_space(t_data *data)
 	}
 	data->suiv->suiv = slot;
 	free(src);
+}
+
+char	*ft_strijoin(char *beg, char *end)
+{
+	char	*ret;
+	int		len;
+	int		i;
+	int		j;
+
+	len = ft_strlen(beg) + ft_strlen(end);
+	ret = malloc((len + 1) * sizeof(char));
+	i = 0;
+	while(beg && beg[i]!= '\0')
+	{
+		ret[i] = beg[i];
+		i++;
+	}
+	j = 0;
+	while(end && end[j]!= '\0')
+	{
+		ret[i] = end[j];
+		i++;
+		j++;
+	}
+	ret[i] = '\0';
+	return(ret);
+}
+
+void	ft_join_arg(t_data *data)
+{
+	t_data	*slot;
+	t_data	*save;
+	char	*str;
+
+	slot = data;
+	save = NULL;
+	while (slot != NULL)
+	{
+		if (slot->follow == 1)
+		{
+			str = slot->str;
+			slot->str = ft_strijoin(slot->str, slot->suiv->str);
+			slot->follow = slot->suiv->follow;
+			save = slot->suiv->suiv;
+			free(str);
+			del_l_arg(slot->suiv);
+			slot->suiv = save;
+		}
+		slot = slot->suiv;
+	}
 }

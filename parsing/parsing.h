@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 02:21:39 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 00:12:13 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,23 @@
 #define ERR_SPLIT	2
 #define END			3
 
+// Variable globale 
+///extern int exit_code;
+
 typedef struct s_data	t_data;
 typedef	struct s_env	t_env;
-
 typedef enum 
 { 
 	DEFAULT, 
 	CMD,
 	OPT,
 	ARG,
+	ARG_FILE,
 	PIPE,
-	S_L_REDIR,
-	D_L_REDIR,
 	S_R_REDIR,
 	D_R_REDIR,
+	S_L_REDIR,
+	D_L_REDIR,
 	S_QUOTE,
 	D_QUOTE,
 	EX_CODE
@@ -132,6 +135,7 @@ char	**ft_split_exp(char *str);
 void	ft_join_arg(t_data *data);
 t_data	*ft_last_error(t_data *data);
 int		ft_cmp_token(t_data *data);
+void	ft_token(t_data *data);
 #endif
 
 //"sdasa$asdad$aDa$zsda$$$$AASdAs$?adads"

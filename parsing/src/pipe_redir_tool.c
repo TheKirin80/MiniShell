@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:43 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:47 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/06 06:29:59 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,22 @@ void	ft_split_l_redir(t_data *data, char *src, int *i)
 		data->suiv = add_s_l_redir_token();
 	}
 	(*i)++;
-	data->suiv->suiv = add_l_arg();
-	data->suiv->suiv->str = ft_strcopy_int(src, i);
+	if (data->str != NULL && data->suiv != NULL)
+	{
+		data->suiv->suiv = add_l_arg();
+		data->suiv->suiv->str = ft_strcopy_int(src, i);
+	}
+	if (data->str == NULL || data->suiv == NULL || data->suiv->suiv == NULL || data->suiv->suiv->str == NULL)
+	{
+		free_parse(data);
+		data = NULL;
+	}
 }
 
 void	ft_split_r_redir(t_data *data, char *src, int *i)
 {
 	data->str = ft_strcopy_char(src, '>');
-	if (src[(*i) + 1] == '>')
+	if (src && src[(*i) + 1] == '>')
 	{
 		(*i)++;
 		data->suiv = add_d_r_redir_token();
@@ -42,8 +50,16 @@ void	ft_split_r_redir(t_data *data, char *src, int *i)
 		data->suiv = add_s_r_redir_token();
 	}
 	(*i)++;
-	data->suiv->suiv = add_l_arg();
-	data->suiv->suiv->str = ft_strcopy_int(src, i);
+	if (data->str != NULL && data->suiv != NULL)
+	{
+		data->suiv->suiv = add_l_arg();
+		data->suiv->suiv->str = ft_strcopy_int(src, i);
+	}
+	if (data->str == NULL || data->suiv == NULL || data->suiv->suiv == NULL || data->suiv->suiv->str == NULL)
+	{
+		free_parse(data);
+		data = NULL;
+	}
 }
 
 void	ft_split_pipe_redir(t_data *data, char *src, int *i)
@@ -51,25 +67,21 @@ void	ft_split_pipe_redir(t_data *data, char *src, int *i)
 	data->str = ft_strcopy_char(src, '|');
 	data->suiv = add_pipe_token();
 	(*i)++;
-	data->suiv->suiv = add_l_arg();
-	data->suiv->suiv->str = ft_strcopy_int(src, i);
+	if (data->str != NULL && data->suiv != NULL)
+	{
+		data->suiv->suiv = add_l_arg();
+		data->suiv->suiv->str = ft_strcopy_int(src, i);
+	}
+	if (data->str == NULL || data->suiv == NULL || data->suiv->suiv == NULL || data->suiv->suiv->str == NULL)
+	{
+		free_parse(data);
+		data = NULL;
+	}
 }
 
 void	ft_error_rp_split(t_data *data, t_data *save)
 {
-	if (data->suiv == NULL)
-	{
-		data->suiv = save;
-		free_parse(data);
-		data = NULL;
-	}
-	else if (data->suiv->suiv == NULL)
-	{
-		data->suiv->suiv = save;
-		free_parse(data);
-		data = NULL;
-	}
-	else
+	if (data && data->suiv != NULL && data->suiv->suiv != NULL)
 	{
 		data->suiv->suiv->suiv = save;
 		if (data->follow == 1)
@@ -78,6 +90,8 @@ void	ft_error_rp_split(t_data *data, t_data *save)
 			data->suiv->suiv->follow = 1;
 		}
 	}
+	else
+		free_parse(save);
 }
 
 void	ft_select_split(t_data *data)

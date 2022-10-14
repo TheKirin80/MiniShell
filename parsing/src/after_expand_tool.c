@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 02:04:24 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:49:44 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_join_arg(t_data *data)
 	save = NULL;
 	while (slot != NULL)
 	{
-		if (slot->follow == 1)
+		while (slot->follow == 1)
 		{
 			str = slot->str;
 			slot->str = ft_strijoin(slot->str, slot->suiv->str);

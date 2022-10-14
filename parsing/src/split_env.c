@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/01 16:21:22 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/06 06:29:36 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ char	*ft_strcopy_char(char *str, char c)
 	i = 0;
 	len = ft_strlen_char(str, c);
 	cpy = malloc ((len + 1) * sizeof(char));
-	if (str == NULL || cpy == NULL )
+	if (cpy == NULL)
 		return (NULL);
-	while(str[i] != c)
+	while(str && str[i] != c)
 	{
 		cpy[i] = str[i];
 		i++;

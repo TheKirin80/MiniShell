@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 02:08:20 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 00:12:21 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,19 @@ t_data	*parsing(char *s, char **env)
 	if (data == NULL)
 		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_pipe_redir(data);
+	if (data == NULL)
+		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_search_expand(data, env);
+	if (data == NULL)
+		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_after_expand(data);
+	if (data == NULL)
+		return (gest_error(ERR_SPLIT, data), NULL);
 	data = ft_last_error(data);
 	if (data == NULL)
+		return (gest_error(ERR_SPLIT, data), NULL);
+	if (data == NULL)
 		return (NULL);
-	
 	printer = data;
 	i = 0;
 	while (printer != NULL)
@@ -40,6 +47,7 @@ t_data	*parsing(char *s, char **env)
 		i++;
 		printer = printer->suiv;
 	}
+	//exit_code = 2;
 	gest_error(END, data);
 	return (data);
 }

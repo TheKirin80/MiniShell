@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 12:08:02 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/24 20:58:05 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/06 05:44:43 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,15 @@ int	ft_compare_char(char *src, char cmp)
 	int	i;
 	
 	i = 0;
-	while (src[i] != '\0')
+	if (src)
 	{
-		if (src[i] == cmp)
-			return (FOUND);
-		i++;
+		while (src[i] != '\0')
+		{
+			if (src[i] == cmp)
+				return (FOUND);
+			i++;
+		}
 	}
-	//printf("src = %s , j'ai rien trouve\n", src);
 	return (N_FOUND);
 }
 

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 03:11:05 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:18:40 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ t_data	*ft_quot_esp_split(char *src)
 		while(src[i] == ' ')
 			i++;
 		if (src[i] != '\0')
+		{
 			slot->suiv = add_l_arg();
+			if (slot->suiv == NULL)
+				return (gest_error(ERR_SPLIT, data), NULL);
+		}
 	}
 	return (data);
 }
@@ -48,7 +52,10 @@ t_data	*ft_pipe_redir(t_data *data)
 		if (slot->token == DEFAULT && ft_compare_str(slot->str, "<|>") == FOUND)
 			ft_select_split(slot);
 		if (slot == NULL)
+		{	
+			printf("je suis la\n");
 			return (gest_error(ERR_SPLIT, data), NULL);
+		}
 		slot = slot->suiv;
 	}
 	slot = data;
@@ -71,7 +78,7 @@ t_data	*ft_search_expand(t_data *data, char **env)
 	{
 		if (slot->token != S_QUOTE)
 		{
-			if (ft_compare_char(slot->str,'$') == FOUND)
+			if (ft_compare_char(slot->str, '$') == FOUND)
 			{
 				ft_expand(slot, env);
 				if (slot->str == NULL)
@@ -120,5 +127,7 @@ t_data	*ft_last_error(t_data *data)
 		else
 			slot=slot->suiv;
 	}
+	if (data != NULL)
+		ft_token(data);
 	return (data);
 }

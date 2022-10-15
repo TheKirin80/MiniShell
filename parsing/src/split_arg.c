@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/11 13:18:40 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:32:27 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_data	*ft_quot_esp_split(char *src)
 {
-	int	i;
+	int		i;
 	t_data	*slot;
 	t_data	*data = NULL;
 
@@ -24,12 +24,12 @@ t_data	*ft_quot_esp_split(char *src)
 	i = 0;
 	while (slot && src[i] != '\0')
 	{
-		while(slot->suiv != NULL)
+		while (slot->suiv != NULL)
 			slot = slot->suiv;
 		slot->str = ft_strcopy_esp_split(slot, src, &i, " \'\"");
 		if (slot->str == NULL)
 			return (gest_error(ERR_SPLIT, data), NULL);
-		while(src[i] == ' ')
+		while (src[i] == ' ')
 			i++;
 		if (src[i] != '\0')
 		{
@@ -82,7 +82,7 @@ t_data	*ft_search_expand(t_data *data, char **env)
 			{
 				ft_expand(slot, env);
 				if (slot->str == NULL)
-					return(gest_error(ERR_SPLIT, data), NULL);
+					return (gest_error(ERR_SPLIT, data), NULL);
 			}
 		}
 		slot = slot->suiv;
@@ -99,11 +99,11 @@ t_data	*ft_after_expand(t_data	*data)
 	{
 		if (slot->token != S_QUOTE && slot->token != D_QUOTE)
 		{
-			if (ft_compare_char(slot->str,' ') == FOUND)
+			if (ft_compare_char(slot->str, ' ') == FOUND)
 			{
 				ft_split_space(slot);
 				if (slot->str == NULL)
-					return(gest_error(ERR_SPLIT, data), NULL);
+					return (gest_error(ERR_SPLIT, data), NULL);
 			}
 		}
 		slot = slot->suiv;
@@ -117,7 +117,7 @@ t_data	*ft_last_error(t_data *data)
 	t_data	*slot;
 
 	slot = data;
-	while(slot != NULL)
+	while (slot != NULL)
 	{
 		if (ft_cmp_token(slot) == FOUND && ft_cmp_token(slot->suiv) == FOUND)
 		{
@@ -125,7 +125,7 @@ t_data	*ft_last_error(t_data *data)
 			slot = NULL;
 		}
 		else
-			slot=slot->suiv;
+			slot = slot->suiv;
 	}
 	if (data != NULL)
 		ft_token(data);

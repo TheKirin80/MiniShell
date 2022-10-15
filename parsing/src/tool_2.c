@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 13:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 11:19:12 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:15:37 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strcmp(char *env, char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (str[i] != '\0' && env[i] != '\0' && str[i] == env[i])
 		i++;
@@ -39,7 +39,7 @@ int	ft_strcmp_i(char *env, char *str, int i)
 	return (N_FOUND);
 }
 
-int ft_strstrcmp(char **env, char *str)
+int	ft_strstrcmp(char **env, char *str)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ char	*ft_strjoin(char **str)
 	while (str[i] != NULL)
 	{
 		j = 0;
-		while(str[i][j] != '\0')
+		while (str[i][j] != '\0')
 		{
 			cpy[len] = str[i][j];
 			len++;

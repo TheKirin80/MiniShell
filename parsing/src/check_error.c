@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:47:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:31 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:28:27 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_find_end(char *s, int *i, char c)
 int	ft_test_pipe(char *s, int i)
 {
 	int	j;
-	
+
 	j = i;
 	if (j == 0)
 		return (ERROR);
@@ -78,7 +78,7 @@ int	ft_test_redir_r(char *s, int *i)
 int	check_error_parse(char *s)
 {
 	int	i;
-	int error;
+	int	error;
 
 	if (!s)
 		return (ERROR);
@@ -97,6 +97,6 @@ int	check_error_parse(char *s)
 		else if (s[i] == '>')
 			error = ft_test_redir_r(s, &i);
 		i++;
-	}  
+	}
 	return (error);
 }

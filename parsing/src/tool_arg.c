@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 02:23:40 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:33:01 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:43:18 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-t_data*	add_l_arg(void)
+t_data	*add_l_arg(void)
 {
 	t_data	*slot;
 
@@ -29,17 +29,17 @@ t_data*	add_l_arg(void)
 void	del_l_arg(t_data *data)
 {
 	if (data->str != NULL)
-			free(data->str);
+		free(data->str);
 	free(data);
 }
 
 void	clean_list(t_data *slot)
 {
-	t_data *save;
-	int n_vid;
-	
+	t_data	*save;
+	int		n_vid;
+
 	save = NULL;
-	while(slot != NULL)
+	while (slot != NULL)
 	{
 		n_vid = 0;
 		while (slot->suiv != NULL && slot->suiv->token == 0 && n_vid == 0)

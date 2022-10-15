@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:44:08 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:40 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:45:46 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	free_str(char **str)
 
 void	free_parse(t_data *data)
 {
-	t_data *tmp;
-	
+	t_data	*tmp;
+
 	tmp = NULL;
 	while (data != NULL)
 	{
@@ -51,5 +51,4 @@ void	gest_error(int code_err, t_data *data)
 	}
 	else if (code_err == END)
 		free_parse(data);
-	
 }

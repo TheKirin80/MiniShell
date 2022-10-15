@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:22:36 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 17:23:40 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:27:53 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-int		ft_strstrlen(char **str)
+int	ft_strstrlen(char **str)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ char	**ft_split_exp(char *str)
 	char	**exp;
 	int		cpt[3];
 	int		dollar;
-	
+
 	exp = NULL;
 	cpt[0] = 0;
 	cpt[1] = 0;
@@ -63,6 +63,6 @@ char	**ft_split_exp(char *str)
 		}
 		(cpt[0])++;
 	}
-	exp = add_one_str(exp, ft_strcopy_i_j(str, cpt[1], cpt[0]));	
+	exp = add_one_str(exp, ft_strcopy_i_j(str, cpt[1], cpt[0]));
 	return (exp);
 }

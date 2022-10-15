@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 00:12:13 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:12:26 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 #define END			3
 
 // Variable globale 
-///extern int exit_code;
+//extern int exit_code;
 
 typedef struct s_data	t_data;
 typedef	struct s_env	t_env;

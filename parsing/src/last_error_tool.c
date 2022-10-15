@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 02:10:29 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/14 23:15:54 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:51:51 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,23 @@ int	ft_cmp_token(t_data *data)
 
 void	ft_token(t_data *data)
 {
-	int cmd;
-	t_data *slot;
+	int		cmd;
+	t_data	*slot;
 
 	slot = data;
 	cmd = 0;
 	while (slot != NULL)
 	{
-		if(slot->token == DEFAULT || slot->token == S_QUOTE || slot->token == D_QUOTE)
+		if (slot->token == DEFAULT || slot->token == S_QUOTE
+			|| slot->token == D_QUOTE)
 		{
 			if (cmd == 0)
 			{
 				slot->token = CMD;
 				cmd = 1;
 			}
-			else 
-				slot->token = ARG;	
+			else
+				slot->token = ARG;
 		}
 		else if (slot->token == PIPE)
 			cmd = 0;

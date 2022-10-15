@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:44:11 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 12:39:37 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:37:37 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-int		ft_comp_esp_split(t_data *slot, char src)
+int	ft_comp_esp_split(t_data *slot, char src)
 {
 	if (src == '\'')
 	{
@@ -35,7 +35,7 @@ int	ft_quote_case(char *str, char *cpy, int *i, char c)
 	int	j;
 
 	j = 0;
-	while(str[(*i)] != '\0' && str[(*i)] != c)
+	while (str[(*i)] != '\0' && str[(*i)] != c)
 	{
 		cpy[j] = str[(*i)];
 		(*i)++;
@@ -56,7 +56,7 @@ int	ft_space_case(char *str, char *cpy, int *i, char *c)
 	int	j;
 
 	j = 0;
-	while(str[(*i)] != '\0' && ft_compare(str[(*i)], c) == N_FOUND)
+	while (str[(*i)] != '\0' && ft_compare(str[(*i)], c) == N_FOUND)
 	{
 		cpy[j] = str[(*i)];
 		(*i)++;
@@ -73,11 +73,11 @@ int	ft_space_case(char *str, char *cpy, int *i, char *c)
 
 char	*ft_strcopy_esp_split(t_data *slot, char *str, int *i, char *c)
 {
-	int 	choice;
+	int		choice;
 	int		len;
 	char	*cpy;
 
-	while(str[(*i)] == ' ')
+	while (str[(*i)] == ' ')
 			(*i)++;
 	choice = ft_comp_esp_split(slot, str[(*i)]);
 	len = ft_strlen_char_i(str, c[choice], (*i));

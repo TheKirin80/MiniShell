@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/11 12:49:44 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:42:02 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,20 @@ char	*ft_strijoin(char *beg, char *end)
 	len = ft_strlen(beg) + ft_strlen(end);
 	ret = malloc((len + 1) * sizeof(char));
 	i = 0;
-	while(beg && beg[i]!= '\0')
+	while (beg && beg[i] != '\0')
 	{
 		ret[i] = beg[i];
 		i++;
 	}
 	j = 0;
-	while(end && end[j]!= '\0')
+	while (end && end[j] != '\0')
 	{
 		ret[i] = end[j];
 		i++;
 		j++;
 	}
 	ret[i] = '\0';
-	return(ret);
+	return (ret);
 }
 
 void	ft_join_arg(t_data *data)

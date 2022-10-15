@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 22:28:20 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 06:29:36 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:39:17 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strcopy(char *str)
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		cpy[i] = str[i];
 		i++;
@@ -43,7 +43,7 @@ char	*ft_strcopy_int(char *str, int *i)
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);
-	while(str[(*i)] != '\0')
+	while (str[(*i)] != '\0')
 	{
 		cpy[j] = str[(*i)];
 		j++;
@@ -64,7 +64,7 @@ char	*ft_strcopy_char(char *str, char c)
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (cpy == NULL)
 		return (NULL);
-	while(str && str[i] != c)
+	while (str && str[i] != c)
 	{
 		cpy[i] = str[i];
 		i++;
@@ -81,7 +81,6 @@ char	*ft_strcopy_char_i(char *str, char c, int *i)
 
 	j = 0;
 	len = ft_strlen_char(str, c);
-	//Leak si str == NULL ????
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);
@@ -104,7 +103,7 @@ char	*ft_strcopy_char_e(char *str, char c, int *i)
 	cpy = malloc ((len + 1) * sizeof(char));
 	if (str == NULL || cpy == NULL )
 		return (NULL);
-	while(str[(*i)] != '\0' && str[(*i)] != c)
+	while (str[(*i)] != '\0' && str[(*i)] != c)
 	{
 		cpy[(*i)] = str[(*i)];
 		(*i)++;

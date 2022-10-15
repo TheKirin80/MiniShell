@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:19:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 17:20:51 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 14:14:19 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**add_one_str(char **exp, char *str)
 {
 	char	**cpy;
 	int		i;	
-	
+
 	i = 0;
 	cpy = malloc ((ft_strstrlen(exp) + 2) * sizeof(char *));
 	while (exp != NULL && exp[i] != NULL)
@@ -44,7 +44,7 @@ char	**add_one_str(char **exp, char *str)
 	return (cpy);
 }
 
-int		found_split(char *s, int dollar, int j, int i)
+int	found_split(char *s, int dollar, int j, int i)
 {
 	if (dollar == 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 00:22:14 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/06 01:45:00 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:12:26 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*dollar_case(char **exp, int i)
 	ret[0] = '$';
 	ret[1] = '\0';
 	free(exp[i]);
-	return ret;
+	return (ret);
 }
 
 char	*n_found_case(char **exp, int i)
@@ -47,7 +47,7 @@ char	*switch_env_case(char **exp, char **env, int j, int i)
 
 char	*modif_exp(char **exp, int j, char **env)
 {
-	int i;
+	int	i;
 
 	while (exp[j] != NULL)
 	{
@@ -71,10 +71,10 @@ void	ft_expand(t_data *data, char **env)
 {
 	char	**exp;
 	int		i;
-	
+
 	i = 0;
 	exp = ft_split_exp(data->str);
 	printer(exp);
 	free(data->str);
-	data->str = modif_exp(exp , i, env);
+	data->str = modif_exp(exp, i, env);
 }

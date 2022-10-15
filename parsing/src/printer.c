@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 11:10:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/02 11:12:52 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:14:11 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	printer(char **exp)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (exp[i] != NULL)
 	{
 		printf("str %i : %s\n", i, exp[i]);

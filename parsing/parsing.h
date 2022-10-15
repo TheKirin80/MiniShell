@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:12:26 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:19:59 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,27 @@
 # include <sys/ioctl.h>
 # include <termios.h>
 
-#define ERROR		-1
-#define OK			0
-#define N_FOLLOW	0
-#define N_FOUND		0
-#define FOUND		1
-#define	FOLLOW		1
-#define CONTINUE	1
-#define ERR_CHECK	1
-#define SPEC		2
-#define ERR_SPLIT	2
-#define END			3
+# define ERROR		-1
+# define OK			0
+# define N_FOLLOW	0
+# define N_FOUND	0
+# define FOUND		1
+# define FOLLOW		1
+# define CONTINUE	1
+# define ERR_CHECK	1
+# define SPEC		2
+# define ERR_SPLIT	2
+# define END		3
 
 // Variable globale 
 //extern int exit_code;
 
 typedef struct s_data	t_data;
-typedef	struct s_env	t_env;
-typedef enum 
-{ 
-	DEFAULT, 
+typedef struct s_env	t_env;
+
+typedef enum s_token
+{
+	DEFAULT,
 	CMD,
 	OPT,
 	ARG,
@@ -70,7 +71,7 @@ struct s_data
 	char	*str;
 	t_token	token;
 	t_data	*suiv;
-	int 	follow;
+	int		follow;
 };
 
 struct	s_env
@@ -109,11 +110,11 @@ int		ft_count_compare(char *src, char cmp);
 int		check_space(char *s);
 void	ft_select_split(t_data *data);
 t_data	*ft_pipe_redir(t_data *data);
-t_data*	add_pipe_token(void);
-t_data*	add_s_l_redir_token(void);
-t_data*	add_s_r_redir_token(void);
-t_data*	add_d_l_redir_token(void);
-t_data*	add_d_r_redir_token(void);
+t_data	*add_pipe_token(void);
+t_data	*add_s_l_redir_token(void);
+t_data	*add_s_r_redir_token(void);
+t_data	*add_d_l_redir_token(void);
+t_data	*add_d_r_redir_token(void);
 t_data	*ft_search_expand(t_data *data, char **env);
 int		ft_strstrcmp(char **env, char *str);
 char	*ft_strjoin(char **str);

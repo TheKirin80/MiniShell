@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:21:15 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:38:18 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:09:16 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_data	*parsing(char *s, char **env)
 {
 	t_data	*data;
-	int		i;
 
 	if (check_space(s) == ERROR)
 		return (NULL);

@@ -6,13 +6,13 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:40:58 by akefeder          #+#    #+#             */
-/*   Updated: 2022/09/18 15:32:56 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:13:26 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-t_data*	add_pipe_token(void)
+t_data	*add_pipe_token(void)
 {
 	t_data	*slot;
 
@@ -24,7 +24,7 @@ t_data*	add_pipe_token(void)
 	return (slot);
 }
 
-t_data*	add_s_l_redir_token(void)
+t_data	*add_s_l_redir_token(void)
 {
 	t_data	*slot;
 
@@ -36,7 +36,7 @@ t_data*	add_s_l_redir_token(void)
 	return (slot);
 }
 
-t_data*	add_s_r_redir_token(void)
+t_data	*add_s_r_redir_token(void)
 {
 	t_data	*slot;
 
@@ -48,7 +48,7 @@ t_data*	add_s_r_redir_token(void)
 	return (slot);
 }
 
-t_data*	add_d_l_redir_token(void)
+t_data	*add_d_l_redir_token(void)
 {
 	t_data	*slot;
 
@@ -61,7 +61,7 @@ t_data*	add_d_l_redir_token(void)
 	return (slot);
 }
 
-t_data*	add_d_r_redir_token(void)
+t_data	*add_d_r_redir_token(void)
 {
 	t_data	*slot;
 

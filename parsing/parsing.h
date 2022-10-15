@@ -6,9 +6,11 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 15:19:59 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 20:28:34 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef PARSING_H
 # define PARSING_H
@@ -43,11 +45,15 @@
 # define ERR_SPLIT	2
 # define END		3
 
+//# define MINUS_STR "----------------------------------------------------------------------------------------------------"
+//# define TEST "\033[36;01m(%s:%d) \033[31;01m%s\033[0m %.*s>\033[35;01m%d\033[0m\n", __FILE__, __LINE__, __FUNCTION__, (int)(70 - (strlen(__FUNCTION__) + strlen(__FILE__) + 3)), MINUS_STR, __LINE__
+
 // Variable globale 
-//extern int exit_code;
+extern int exit_ret;
 
 typedef struct s_data	t_data;
 typedef struct s_env	t_env;
+
 
 typedef enum s_token
 {

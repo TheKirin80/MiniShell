@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 04:53:51 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:32:27 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:27:03 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ t_data	*ft_quot_esp_split(char *src)
 {
 	int		i;
 	t_data	*slot;
-	t_data	*data = NULL;
+	t_data	*data;
 
-	if (!data)
-		data = add_l_arg();
+	data = add_l_arg();
 	slot = data;
 	i = 0;
 	while (slot && src[i] != '\0')

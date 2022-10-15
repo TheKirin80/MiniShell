@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 00:22:14 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 15:12:26 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/15 18:05:13 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*modif_exp(char **exp, int j, char **env)
 		i = 0;
 		if (exp[j][0] == '$' && exp[j][1] == '\0')
 			exp[j] = dollar_case(exp, j);
+		// else if (exp[j][0] == '$' && exp[j][1] == '?')
+		// 	exp[j] = interro_case(exp, j);
 		else if (exp[j][0] == '$')
 		{
 			i = ft_strstrcmp(env, exp[j]);

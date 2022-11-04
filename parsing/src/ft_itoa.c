@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: orfreoua <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:57:18 by orfreoua          #+#    #+#             */
-/*   Updated: 2022/10/02 15:57:20 by orfreoua         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:16:08 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/minishell.h"
+#include "../parsing.h"
 
 char	*exception(void)
 {

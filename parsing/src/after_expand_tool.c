@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:32:18 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:42:02 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:39:55 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,24 @@ char	*ft_strijoin(char *beg, char *end)
 	return (ret);
 }
 
+int	ft_fuse(t_data *slot, t_data *suiv)
+{
+	if (slot->token == DEFAULT && slot->str[0] == '$')
+	{
+		if (suiv->token == S_QUOTE || suiv->token == D_QUOTE)
+		{
+			slot->token = suiv->token;
+			free(slot->str);
+			slot->str = suiv->str;
+			suiv->str = NULL;
+			printf("error fuse str : %s\n", slot->str);
+			return (ERROR);
+		}
+	}
+	printf("OK fuse str : %s\n", slot->str);
+	return (OK);
+}
+
 void	ft_join_arg(t_data *data)
 {
 	t_data	*slot;
@@ -76,10 +94,14 @@ void	ft_join_arg(t_data *data)
 		while (slot->follow == 1)
 		{
 			str = slot->str;
-			slot->str = ft_strijoin(slot->str, slot->suiv->str);
-			slot->follow = slot->suiv->follow;
+			if (ft_fuse(slot, slot->suiv) == OK)
+			{
+				slot->str = ft_strijoin(slot->str, slot->suiv->str);
+				free(str);
+			}
+			printf("sortie fuse str : %s\n", slot->str);
 			save = slot->suiv->suiv;
-			free(str);
+			slot->follow = slot->suiv->follow;
 			del_l_arg(slot->suiv);
 			slot->suiv = save;
 		}

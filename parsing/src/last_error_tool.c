@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 02:10:29 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 15:08:50 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:32:32 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_cmp_token(t_data *data)
 {
-	if (data && data->token > ARG && data->token < S_QUOTE)
+	if (data && data->token > ARG_FILE && data->token < S_QUOTE)
 		return (FOUND);
 	return (N_FOUND);
 }

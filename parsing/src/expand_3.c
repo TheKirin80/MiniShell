@@ -6,11 +6,20 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:22:36 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:27:53 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:41:39 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
+
+char	*interro_case(char **exp, int i)
+{
+	char	*ret;
+
+	ret = ft_itoa(g_exit_ret);
+	free(exp[i]);
+	return (ret);
+}
 
 int	ft_strstrlen(char **str)
 {

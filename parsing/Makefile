@@ -21,6 +21,7 @@ SRC_FILES	=	main.c\
 				expand_3.c\
 				after_expand_tool.c\
 				last_error_tool.c\
+				ft_itoa.c
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

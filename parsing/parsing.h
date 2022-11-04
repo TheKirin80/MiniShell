@@ -6,11 +6,9 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 01:18:10 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 20:28:34 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:32:07 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#pragma once
 
 #ifndef PARSING_H
 # define PARSING_H
@@ -45,15 +43,11 @@
 # define ERR_SPLIT	2
 # define END		3
 
-//# define MINUS_STR "----------------------------------------------------------------------------------------------------"
-//# define TEST "\033[36;01m(%s:%d) \033[31;01m%s\033[0m %.*s>\033[35;01m%d\033[0m\n", __FILE__, __LINE__, __FUNCTION__, (int)(70 - (strlen(__FUNCTION__) + strlen(__FILE__) + 3)), MINUS_STR, __LINE__
-
-// Variable globale 
-extern int exit_ret;
+// Variable globale
+extern int				g_exit_ret;
 
 typedef struct s_data	t_data;
 typedef struct s_env	t_env;
-
 
 typedef enum s_token
 {
@@ -143,6 +137,8 @@ void	ft_join_arg(t_data *data);
 t_data	*ft_last_error(t_data *data);
 int		ft_cmp_token(t_data *data);
 void	ft_token(t_data *data);
+char	*interro_case(char **exp, int i);
+char	*ft_itoa(int n);
 #endif
 
 //"sdasa$asdad$aDa$zsda$$$$AASdAs$?adads"

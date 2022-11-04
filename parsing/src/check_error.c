@@ -6,7 +6,7 @@
 /*   By: akefeder <akefeder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 14:47:12 by akefeder          #+#    #+#             */
-/*   Updated: 2022/10/15 14:28:27 by akefeder         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:47:22 by akefeder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int	ft_test_pipe(char *s, int i)
 		return (ERROR);
 	if (s[j + 1] == '|')
 		return (ERROR);
+	j++;
+	while (s[j] == ' ')
+		j++;
+	if (s[j] == '\0')
+		return (ERROR);
 	return (OK);
 }
 
@@ -55,7 +60,13 @@ int	ft_test_redir_l(char *s, int *i)
 		if (s[j + 2] == '<' || s[j + 2] == '\0')
 			return (ERROR);
 		(*i) = j + 1;
+		j++;
 	}
+	j++;
+	while (s[j] == ' ')
+		j++;
+	if (s[j] == '\0')
+		return (ERROR);
 	return (OK);
 }
 
@@ -71,7 +82,13 @@ int	ft_test_redir_r(char *s, int *i)
 		if (s[j + 2] == '>' || s[j + 2] == '\0')
 			return (ERROR);
 		(*i) = j + 1;
+		j++;
 	}
+	j++;
+	while (s[j] == ' ')
+		j++;
+	if (s[j] == '\0')
+		return (ERROR);
 	return (OK);
 }
 
